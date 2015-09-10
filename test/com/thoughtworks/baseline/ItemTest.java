@@ -70,4 +70,11 @@ public class ItemTest {
 
         assertEquals(1.90, item.salesTax(), 0.00);
     }
+
+    @Test
+    public void shouldNotHaveSalesTaxIfExemptedFromSalesTax() {
+        Item item = new Item("chocolate bar", 0.85);
+
+        assertEquals(0.00, item.salesTax(), 0.00);
+    }
 }

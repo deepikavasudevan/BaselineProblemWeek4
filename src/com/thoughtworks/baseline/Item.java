@@ -12,13 +12,16 @@ public class Item {
     }
 
     public boolean isExemptedFromSalesTax() {
-        if(name.equals("book") || name.contains("chocolate") || name.equals("packet of headache pills"))
+        if (name.equals("book") || name.contains("chocolate") || name.equals("packet of headache pills"))
             return true;
         else
             return false;
     }
 
     public double salesTax() {
-        return Math.ceil((0.10 * shelfPrice) * 20.0) / 20.0;
+        if (!isExemptedFromSalesTax())
+            return Math.ceil((0.10 * shelfPrice) * 20.0) / 20.0;
+        else
+            return 0.00;
     }
 }
