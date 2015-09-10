@@ -38,4 +38,8 @@ public class Item {
         else
             return 0.00;
     }
+
+    public double totalCost() {
+        return ((shelfPrice + salesTax() + importDuty()) * 100.0) / 100.0;
+    }
 }

@@ -13,6 +13,7 @@ public class Cashier {
 
     public double totalSalesTax() {
         double totalSalesTax = 0.0;
+
         for (String itemDetail : shoppingBasket) {
             Item item = convertItemDetailsIntoAnItem(itemDetail);
             totalSalesTax += item.salesTax() + item.importDuty();
@@ -23,5 +24,15 @@ public class Cashier {
     private Item convertItemDetailsIntoAnItem(String itemDetail) {
         Parser parser = new Parser(itemDetail);
         return parser.parse();
+    }
+
+    public double totalCostOfShoppingBasket() {
+        double totalCostOfShoppingBasket = 0.0;
+
+        for (String itemDetail : shoppingBasket) {
+            Item item = convertItemDetailsIntoAnItem(itemDetail);
+            totalCostOfShoppingBasket += item.totalCost();
+        }
+        return totalCostOfShoppingBasket;
     }
 }

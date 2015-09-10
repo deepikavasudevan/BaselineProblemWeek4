@@ -105,4 +105,11 @@ public class ItemTest {
 
         assertEquals(0.00, item.importDuty(), 0.001);
     }
+
+    @Test
+    public void shouldHaveTotalCost() {
+        Item item = new Item("music CD", 14.99);
+
+        assertEquals(16.49, item.totalCost(), 0.001);
+    }
 }
