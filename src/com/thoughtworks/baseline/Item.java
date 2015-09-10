@@ -12,8 +12,7 @@ public class Item {
     }
 
     public boolean isExemptedFromSalesTax() {
-        if(name.equals("book") || name.equals("chocolate bar") || name.equals("box of chocolates")
-                || name.equals("packet of headache pills"))
+        if(name.equals("book") || name.contains("chocolate") || name.equals("packet of headache pills"))
             return true;
         else
             return false;
