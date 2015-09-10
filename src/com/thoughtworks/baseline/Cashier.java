@@ -14,10 +14,14 @@ public class Cashier {
     public double totalSalesTax() {
         double totalSalesTax = 0.0;
         for (String itemDetail : shoppingBasket) {
-            Parser parser = new Parser(itemDetail);
-            Item item = parser.parse();
+            Item item = convertItemDetailsIntoAnItem(itemDetail);
             totalSalesTax += item.salesTax() + item.importDuty();
         }
         return totalSalesTax;
+    }
+
+    private Item convertItemDetailsIntoAnItem(String itemDetail) {
+        Parser parser = new Parser(itemDetail);
+        return parser.parse();
     }
 }
