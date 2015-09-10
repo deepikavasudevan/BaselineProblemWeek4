@@ -1,4 +1,4 @@
-/*An item has a name and cost and checks if it is imported or has sales tax*/
+/*An item has a name and cost, and checks if it is imported or has sales tax and calculates the same.*/
 package com.thoughtworks.baseline;
 
 public class Item {
