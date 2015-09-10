@@ -1,4 +1,4 @@
-/*A Cashier finds the total cost and sales tax of a shopping basket*/
+/*A Shopping Basket finds the total cost and sales tax of its items*/
 package com.thoughtworks.baseline;
 
 import java.util.ArrayList;

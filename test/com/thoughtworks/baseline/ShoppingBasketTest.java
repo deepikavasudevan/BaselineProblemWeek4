@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class ShoppingBasketTest {
 
     @Test
-    public void shouldCalculateSalesTaxOfShoppingBasket() {
+    public void shouldCalculateItsTotalSalesTax() {
         ArrayList<String> itemDetails = new ArrayList<>(Arrays.asList("1 book at 12.49", "1 music CD at 14.99", "1 chocolate bar at 0.85"));
         ShoppingBasket shoppingBasket = new ShoppingBasket(itemDetails);
 
@@ -18,7 +18,7 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void shouldCalculateCostOfShoppingBasket() {
+    public void shouldCalculateItsTotalCost() {
         ArrayList<String> itemDetails = new ArrayList<>(Arrays.asList("1 book at 12.49", "1 music CD at 14.99", "1 chocolate bar at 0.85"));
         ShoppingBasket shoppingBasket = new ShoppingBasket(itemDetails);
 
