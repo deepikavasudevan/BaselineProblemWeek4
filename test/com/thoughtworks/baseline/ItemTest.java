@@ -43,6 +43,13 @@ public class ItemTest {
     }
 
     @Test
+    public void shouldNotBeExemptedFromSalesTaxIfABottleOfPerfume() {
+        Item item = new Item("bottle of perfume", 18.99);
+
+        assertFalse(item.isExemptedFromSalesTax());
+    }
+
+    @Test
     public void shouldBeExemptedFromSalesTaxIfPacketOfHeadachePills() {
         Item item = new Item("packet of headache pills", 9.75);
 
