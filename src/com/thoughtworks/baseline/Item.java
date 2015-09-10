@@ -24,4 +24,8 @@ public class Item {
         else
             return 0.00;
     }
+
+    public boolean isExemptedFromImportDuty() {
+        return false;
+    }
 }

@@ -77,4 +77,11 @@ public class ItemTest {
 
         assertEquals(0.00, item.salesTax(), 0.00);
     }
+
+    @Test
+    public void shouldNotBeExemptedFromImportDutyIfItemIsImported() {
+        Item item = new Item("imported box of chocolates", 10.00);
+
+        assertFalse(item.isExemptedFromImportDuty());
+    }
 }
