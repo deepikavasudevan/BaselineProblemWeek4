@@ -11,14 +11,14 @@ public class Cashier {
         this.shoppingBasket = shoppingBasket;
     }
 
-    public double totalSalesTax() {
-        double totalSalesTax = 0.0;
+    public double salesTaxOfShoppingBasket() {
+        double salesTaxOfShoppingBasket = 0.0;
 
         for (String itemDetail : shoppingBasket) {
             Item item = convertItemDetailsIntoAnItem(itemDetail);
-            totalSalesTax += item.salesTax() + item.importDuty();
+            salesTaxOfShoppingBasket += item.salesTax() + item.importDuty();
         }
-        return totalSalesTax;
+        return salesTaxOfShoppingBasket;
     }
 
     private Item convertItemDetailsIntoAnItem(String itemDetail) {
@@ -26,13 +26,13 @@ public class Cashier {
         return parser.parse();
     }
 
-    public double totalCostOfShoppingBasket() {
-        double totalCostOfShoppingBasket = 0.0;
+    public double costOfShoppingBasket() {
+        double costOfShoppingBasket = 0.0;
 
         for (String itemDetail : shoppingBasket) {
             Item item = convertItemDetailsIntoAnItem(itemDetail);
-            totalCostOfShoppingBasket += item.totalCost();
+            costOfShoppingBasket += item.totalCost();
         }
-        return totalCostOfShoppingBasket;
+        return costOfShoppingBasket;
     }
 }
