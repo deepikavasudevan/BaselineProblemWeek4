@@ -1,3 +1,4 @@
+/*An item has a name and cost and checks if it is imported or has sales tax*/
 package com.thoughtworks.baseline;
 
 public class Item {
@@ -11,6 +12,9 @@ public class Item {
     }
 
     public boolean isExemptedFromSalesTax() {
-        return true;
+        if(name.equals("book"))
+            return true;
+        else
+            return false;
     }
 }
