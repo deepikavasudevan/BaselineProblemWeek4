@@ -10,6 +10,13 @@ public class Parser {
     }
 
     public Item parse() {
-        return new Item("book", 12.49);
+        String[] tokens = inputString.split(" ");
+        String itemName = "";
+        for (int i = 1; i < tokens.length - 3; i++) {
+            itemName += tokens[i] + " ";
+        }
+        itemName += tokens[tokens.length - 3];
+
+        return new Item(itemName, Double.parseDouble(tokens[tokens.length - 1]));
     }
 }
