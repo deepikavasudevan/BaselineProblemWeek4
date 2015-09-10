@@ -17,4 +17,8 @@ public class Item {
         else
             return false;
     }
+
+    public double salesTax() {
+        return Math.ceil((0.10 * shelfPrice) * 20.0) / 20.0;
+    }
 }

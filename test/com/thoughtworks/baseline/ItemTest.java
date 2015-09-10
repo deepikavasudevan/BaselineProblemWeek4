@@ -2,6 +2,7 @@ package com.thoughtworks.baseline;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -61,5 +62,12 @@ public class ItemTest {
         Item item = new Item("box of imported chocolates", 11.25);
 
         assertTrue(item.isExemptedFromSalesTax());
+    }
+
+    @Test
+    public void shouldHaveSalesTaxIfItIsNotExemptedFromSalesTax() {
+        Item item = new Item("bottle of perfume", 18.99);
+
+        assertEquals(1.90, item.salesTax(), 0.00);
     }
 }
