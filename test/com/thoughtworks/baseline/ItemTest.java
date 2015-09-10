@@ -84,4 +84,11 @@ public class ItemTest {
 
         assertFalse(item.isExemptedFromImportDuty());
     }
+
+    @Test
+    public void shouldBeExemptedFromImportDutyIfItemIsNotImported() {
+        Item item = new Item("book", 12.49);
+
+        assertTrue(item.isExemptedFromImportDuty());
+    }
 }

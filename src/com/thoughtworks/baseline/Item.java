@@ -26,6 +26,9 @@ public class Item {
     }
 
     public boolean isExemptedFromImportDuty() {
-        return false;
+        if (name.contains("imported"))
+            return false;
+        else
+            return true;
     }
 }
