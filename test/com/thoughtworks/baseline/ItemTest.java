@@ -29,15 +29,15 @@ public class ItemTest {
     }
 
     @Test
-    public void shouldBeExemptedFromSalesTaxIfItIsABoxOfChocolates() {
-        Item item = new Item("box of chocolates", 10.00);
+    public void shouldBeExemptedFromSalesTaxIfItIsAnImportedBoxOfChocolates() {
+        Item item = new Item("imported box of chocolates", 10.00);
 
         assertTrue(item.isExemptedFromSalesTax());
     }
 
     @Test
-    public void shouldNotBeExemptedFromSalesTaxIfBottleOfPerfume() {
-        Item item = new Item("bottle of perfume", 47.50);
+    public void shouldNotBeExemptedFromSalesTaxIfAnImportedBottleOfPerfume() {
+        Item item = new Item("imported bottle of perfume", 47.50);
 
         assertFalse(item.isExemptedFromSalesTax());
     }
