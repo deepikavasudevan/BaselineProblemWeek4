@@ -31,4 +31,8 @@ public class Item {
         else
             return true;
     }
+
+    public double importDuty() {
+        return Math.ceil((0.05 * shelfPrice) * 20.0) / 20.0;
+    }
 }

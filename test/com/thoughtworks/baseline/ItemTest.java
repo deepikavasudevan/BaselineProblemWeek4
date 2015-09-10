@@ -68,14 +68,14 @@ public class ItemTest {
     public void shouldHaveSalesTaxIfItIsNotExemptedFromSalesTax() {
         Item item = new Item("bottle of perfume", 18.99);
 
-        assertEquals(1.90, item.salesTax(), 0.00);
+        assertEquals(1.90, item.salesTax(), 0.001);
     }
 
     @Test
     public void shouldNotHaveSalesTaxIfExemptedFromSalesTax() {
         Item item = new Item("chocolate bar", 0.85);
 
-        assertEquals(0.00, item.salesTax(), 0.00);
+        assertEquals(0.00, item.salesTax(), 0.001);
     }
 
     @Test
@@ -90,5 +90,12 @@ public class ItemTest {
         Item item = new Item("book", 12.49);
 
         assertTrue(item.isExemptedFromImportDuty());
+    }
+
+    @Test
+    public void shouldHaveImportDutyIfNotExemptedFromIt() {
+        Item item = new Item("imported box of chocolates", 10.00);
+
+        assertEquals(0.50, item.importDuty(), 0.001);
     }
 }
