@@ -33,6 +33,9 @@ public class Item {
     }
 
     public double importDuty() {
-        return Math.ceil((0.05 * shelfPrice) * 20.0) / 20.0;
+        if (!isExemptedFromImportDuty())
+            return Math.ceil((0.05 * shelfPrice) * 20.0) / 20.0;
+        else
+            return 0.00;
     }
 }

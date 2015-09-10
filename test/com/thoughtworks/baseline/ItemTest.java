@@ -98,4 +98,11 @@ public class ItemTest {
 
         assertEquals(0.50, item.importDuty(), 0.001);
     }
+
+    @Test
+    public void shouldNotHaveImportDutyIfItemIfExemptedFromIt() {
+        Item item = new Item("book", 12.49);
+
+        assertEquals(0.00, item.importDuty(), 0.001);
+    }
 }
