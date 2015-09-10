@@ -27,4 +27,11 @@ public class ItemTest {
 
         assertTrue(item.isExemptedFromSalesTax());
     }
+
+    @Test
+    public void shouldBeExemptedFromSalesTaxIfItIsABoxOfChocolates() {
+        Item item = new Item("box of chocolates", 10.00);
+
+        assertTrue(item.isExemptedFromSalesTax());
+    }
 }
